@@ -1,0 +1,85 @@
+.icon {
+  display: flex;
+  background-size: cover;
+  // icon size
+  &--xsm {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  &--md {
+    width: 120px;
+    height: 80px;
+  }
+  &--xl {
+    width: 180px;
+    height: 175px;
+  }
+  // icon colors
+  &--black {
+    filter: invert(0%) sepia(98%) saturate(33%) hue-rotate(94deg) brightness(94%) contrast(100%);
+  }
+  &--white {
+    filter: invert(100%) sepia(0%) saturate(4338%) hue-rotate(344deg) brightness(121%) contrast(105%);
+  }
+  &--blue {
+    filter: invert(35%) sepia(33%) saturate(6943%) hue-rotate(228deg) brightness(90%) contrast(92%);
+  }
+  &--purple {
+    filter: invert(41%) sepia(66%) saturate(1309%) hue-rotate(241deg) brightness(103%) contrast(102%);
+  }
+  &--pink {
+    filter: invert(75%) sepia(34%) saturate(5100%) hue-rotate(291deg) brightness(101%) contrast(97%);
+  }
+  &--red {
+    filter: invert(48%) sepia(80%) saturate(3206%) hue-rotate(324deg) brightness(109%) contrast(98%);
+  }
+  &--orange {
+    filter: invert(90%) sepia(18%) saturate(4516%) hue-rotate(316deg) brightness(102%) contrast(99%);
+  }
+  &--yellow {
+    filter: invert(95%) sepia(9%) saturate(6844%) hue-rotate(349deg) brightness(102%) contrast(91%);
+  }
+  &--green {
+    filter: invert(67%) sepia(36%) saturate(799%) hue-rotate(91deg) brightness(97%) contrast(98%);
+  }
+  // icon name
+  &--fast {
+    background-image: url('../icons/fast.svg');
+  }
+  &--campaign {
+    background-image: url('../icons/campaign.svg');
+  }
+  &--engineering {
+    background-image: url('../icons/engineering.svg');
+  }
+  &--message {
+    background-image: url('../icons/message.svg');
+  }
+  &--phonelink {
+    background-image: url('../icons/phonelink.svg');
+  }
+  &--star {
+    background-image: url('../icons/star.svg');
+  }
+  &--attach-email {
+    background-image: url('../icons/attach-email.svg');
+  }
+  &--domain-verification {
+    background-image: url('../icons/domain-verification.svg');
+  }
+  &--payment {
+    background-image: url('../icons/payment.svg');
+  }
+  &--arrow-right {
+    background-image: url('../icons/arrow-right.svg');
+  }
+  &--arrow-left {
+    background-image: url('../icons/arrow-left.svg');
+  }
+  &--arrow-back {
+    background-image: url('../icons/arrow-back.svg');
+  }
+  &--arrow-forward {
+    background-image: url('../icons/arrow-forward.svg');
+  }
+}

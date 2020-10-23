@@ -1,0 +1,387 @@
+/*!
+ * SKUYY WEBDEV
+ * Copyright 2020
+ */
+// Poppins
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+// Icons
+@import 'icons';
+
+// Typography
+$font-base: 'Poppins', sans-serif;
+
+// Colors
+$black: rgb(0, 0, 0);
+$white: rgb(255, 255, 255);
+$blue: #4d58de;
+$purple: #c463ff;
+$pink: #fb74bb;
+$red: #fd586b;
+$orange: #feaa5d;
+$yellow: #f3d317;
+$green: #30e075;
+
+// Shadow
+$box-shadow-sm: 0 0.125rem 0.5rem rgba($black, 0.8);
+$box-shadow: 0 0.25rem 0.5rem rgba($black, 0.25);
+$box-shadow-lg: 0 0.5rem 1rem rgba($black, 0.5);
+
+// Media
+$phone-width: 576px;
+$tablet-width: 768px;
+$tablet-landscape: 992px;
+$desktop-width: 1200px;
+
+// Max
+@mixin max-phone {
+  @media (max-width: #{$phone-width}) {
+    @content;
+  }
+}
+
+@mixin max-tablet {
+  @media (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin max-tablet-landscape {
+  @media (max-width: #{$tablet-landscape}) {
+    @content;
+  }
+}
+
+@mixin max-desktop {
+  @media (max-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+// Min
+@mixin min-phone {
+  @media (min-width: #{$phone-width}) {
+    @content;
+  }
+}
+
+@mixin min-tablet {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin min-tablet-landscape {
+  @media (min-width: #{$tablet-landscape}) {
+    @content;
+  }
+}
+
+@mixin min-desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+// Body
+body {
+  font: 400 1rem/1.5 $font-base;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+// Background for page
+.bg-about-us {
+  background: url('../../assets/images/workplace.jpg') no-repeat center;
+  background-size: cover;
+}
+.bg-contact-us {
+  background: url('../../assets/images/startup.jpg') no-repeat center;
+  background-size: cover;
+}
+
+// Background Color
+.bg-purple {
+  background-color: $purple;
+}
+.bg-pink {
+  background-color: $pink;
+}
+
+// Background Overlay
+.overlay {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+// Custom form
+.form-custom {
+  input[type='text'],
+  input[type='email'],
+  input[type='password'],
+  textarea {
+    background-color: rgb(232, 240, 254);
+    border: none;
+  }
+  input[type='text']:focus,
+  input[type='email']:focus,
+  input[type='password']:focus,
+  textarea:focus {
+    background-color: rgb(232, 240, 254);
+    border: none;
+  }
+}
+
+// Text
+.text-xsm {
+  font-size: 0.75rem;
+}
+.text-sm {
+  font-size: 0.875rem;
+}
+.text-md {
+  font-size: 1rem;
+}
+.text-lg {
+  font-size: 1.125rem;
+}
+
+// Button
+.btn-hovered {
+  transition: 0.3s all;
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $box-shadow;
+  }
+}
+
+// Divider
+span.divider {
+  display: flex;
+  width: 100px;
+  height: 4px;
+}
+
+// Gap
+.flex-gap {
+  &--0 {
+    gap: 0;
+  }
+  &--1 {
+    gap: 1rem;
+  }
+  &--2 {
+    gap: 2rem;
+  }
+  &--3 {
+    gap: 3rem;
+  }
+}
+
+// List
+.list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  &-vertical {
+    flex-direction: column;
+  }
+  &__item {
+    padding: 4px 0;
+  }
+  &__link {
+    padding: 4px 0;
+    color: $black;
+    &:hover {
+      color: $blue;
+      text-decoration: none;
+    }
+  }
+}
+
+//
+// Menu
+//
+// Navbar
+.navbar-nav {
+  .nav-item {
+    &.active .nav-link {
+      font-weight: 500;
+      &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: $blue;
+        transition: width 0.5s;
+      }
+    }
+    .nav-link {
+      font-weight: 400;
+      &:after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: $blue;
+        transition: width 0.3s;
+      }
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// Menu toggle interaktif
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+  margin-left: 15px;
+  input {
+    // Membuat input checkbox interaktif
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    left: -5px;
+    top: -3px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+  }
+  span {
+    // Membuat menu-bars
+    transition: 0.3s all;
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: $black;
+    border-radius: 4px;
+  }
+}
+// Mengatur interaktif menu toggle
+.menu-toggle {
+  span:nth-child(2) {
+    // Bar pertama
+    // Agar berotasi di sumbu x=0 dan y=0
+    transform-origin: 0 0;
+  }
+  span:nth-child(4) {
+    // Bar ketiga
+    // Agar berotasi di sumbu x=0 dan y=100%
+    transform-origin: 0 100%;
+  }
+  // Setelah input checkbox di klik / checked
+  input:checked ~ span:nth-child(2) {
+    // Bar kedua berotasi 45deg
+    transform: rotate(45deg) translate(-1px, -1px);
+  }
+  input:checked ~ span:nth-child(4) {
+    // Bar ketiga berotasi -45deg
+    transform: rotate(-45deg) translate(-1px, 0);
+  }
+  input:checked ~ span:nth-child(3) {
+    // Menghilangkan bar ditengah (kedua)
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+@include min-tablet-landscape {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+// Header section
+@include max-tablet {
+  .header-section {
+    width: 100% !important;
+    text-align: center;
+    margin: 0 auto;
+    .divider {
+      margin: 0 auto;
+    }
+  }
+}
+
+// Card
+.card-group {
+  & > .card {
+    margin-bottom: 30px;
+  }
+}
+@include max-tablet {
+  .card-group {
+    flex-direction: column;
+  }
+}
+
+// Tabs
+.nav-pills .nav-link {
+  background-color: $white;
+  border: 2px solid $blue;
+  color: $black;
+  font-weight: 600;
+  padding: 0.5rem 2rem;
+  border-radius: 50rem;
+}
+@include max-tablet {
+  .nav-pills {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    &::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+    }
+  }
+}
+@include max-tablet {
+  .tab-content {
+    .card {
+      .card-title {
+        text-align: center;
+      }
+      .card-button {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+// Supported
+@include max-tablet {
+  .supported {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    &::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+    }
+  }
+}
+
+// Footer
+.newsletter {
+  transform: translateY(-50%);
+}
+
+#footer {
+  min-height: 30vh;
+}
